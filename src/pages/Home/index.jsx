@@ -11,9 +11,10 @@ function Home() {
 	const inputEmail = useRef();
 
 	async function createUser() {
+		
 		await api.post('/usuarios', {
 			name: inputName.current.value,
-			age: inputAge.current.value,
+			age: Number(inputAge.current.value),
 			email: inputEmail.current.value,
 		});
 		inputName.current.value = '';
