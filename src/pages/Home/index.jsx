@@ -15,7 +15,7 @@ function Home() {
 	async function createUser() {
 		await api.post('/usuarios', {
 			name: inputName.current.value,
-			age: Number(inputAge.current.value),
+			age: parseInt(inputAge.current.value), // convertendo para número
 			email: inputEmail.current.value,
 		});
 		inputName.current.value = '';
